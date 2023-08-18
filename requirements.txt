@@ -1,0 +1,5 @@
+dropbox
+python-dotenv
+pytest
+pytest-cov
+pytest-html
