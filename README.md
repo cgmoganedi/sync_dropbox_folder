@@ -46,12 +46,12 @@ Sync Dropbox Folder is a Python application that allows you to synchronize a loc
         You can also generate HTML test reports using pytest-html: `pytest --html=report.html`
         This command will generate an HTML report named report.html in your current directory. Open the HTML report in a web browser to view the detailed test results.
 
-    Explanation:
-        Integration Test: The test_integration_upload_and_download function tests the interaction between the upload_file and download_file methods of the DropboxSync class. It simulates uploading a test file, then downloading it and checks if the methods were called appropriately.
+    Explanation, in addition to unit tests:
+        ◉ Integration Test: The `test_integration_upload_and_download` function tests the interaction between the `upload_file` and `download_file` methods of the DropboxSync class. It simulates uploading a test file, then downloading it and checks if the methods were called appropriately.
 
-        End-to-End Test: The test_end_to_end_integration function runs the main.py script as a subprocess, which simulates the end-to-end behavior of your program. It checks if the downloaded file exists after running the script.
+        ◉ End-to-End Test: The `test_end_to_end_integration` function runs the `main.py` script as a subprocess, which simulates the end-to-end behavior of your program. It checks if the downloaded file exists after running the script.
 
-        By including integration and end-to-end tests, you ensure that your program's components work together as expected and that the entire workflow is functioning correctly. The coverage report helps you identify which parts of your codebase are being tested and which might need more testing. Test reports provide clear visibility into the test results and coverage, making it easier to track and address any issues in your code.
+        By including integration and end-to-end tests, you ensure that the program's components work together as expected and that the entire workflow is functioning correctly. The coverage report helps you identify which parts of the codebase are being tested and which might need more testing. Test reports provide clear visibility into the test results and coverage, making it easier to track and address any issues in the code.
 
 
 ## Assumptions
@@ -82,3 +82,15 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Please replace placeholders (`<your_access_token_here>`, `your-username`, etc.) with your actual information. The README.md file provides an overview of your application, how to set it up, use it, and future enhancements that can be made. It's a great way to communicate the purpose and functionality of your project to potential users and contributors.
 
+## Additional explanation (Optional)
+
+Software Design Patterns and Principles Applied:
+    ◉ Singleton Pattern: The DropboxSync class follows the Singleton pattern, ensuring that only one instance of the Dropbox API is created and reused throughout the program.
+    ◉ Dependency Injection: The DropboxSync class's dependency (access token) is injected through its constructor, promoting loose coupling and easier testing.
+    ◉ Single Responsibility Principle (SRP): Each method in the DropboxSync class has a single responsibility, either uploading or downloading files from Dropbox.
+    ◉ Exception Handling: Proper exception handling using try-except blocks is implemented to handle Dropbox API errors and provide meaningful error messages.
+    ◉ Separation of Concerns: The code is structured with separation between Dropbox synchronization logic (DropboxSync class) and the main script (main.py).
+    ◉ Configuration Management: The .env file is used to store sensitive configuration data, promoting security and separation of configuration from code.
+    ◉ Unit Testing: Unit tests are written using the Pytest framework to ensure the functionality and robustness of the DropboxSync class methods.
+
+Remember, this is a basic example to showcase the key concepts requested. In a real-world scenario, you would likely implement more comprehensive error handling, logging, and possibly additional design patterns and principles based on the complexity and requirements of the project.
