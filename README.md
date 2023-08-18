@@ -14,13 +14,13 @@ Sync Dropbox Folder is a Python application that allows you to synchronize a loc
 ## Installation
 
 1. Clone the repository:
-   `git clone https://github.com/your-username/sync-dropbox-folder.git && cd sync-dropbox-folder`
+   `git clone https://github.com/cgmoganedi/sync-dropbox-folder.git && cd sync_dropbox_folder`
 
 2. Set up a virtual environment:
-    `python -m venv venv && source venv/bin/activate`
+    `python -m venv venv && source venv/bin/activate` or `python -m venv venv && ./venv/bin/activate` depending on the terminal used.
 
 3. Install the required packages:
-    `pip install -r requirements.txt`
+    `pip install -r requirements.txt` or manually like so: `pip install dropbox python-dotenv pytest pytest-cov pytest-html`
 
 4. Create a `.env` file in the project root and add your Dropbox access token :
     `touch .env`
@@ -34,6 +34,25 @@ Sync Dropbox Folder is a Python application that allows you to synchronize a loc
 2. Run the application:
     `python src/main.py`
     The application will upload the specified local file to Dropbox and then download it as "downloaded_file.txt".
+
+3. Test Reports and Coverage:
+    To generate test reports and coverage for your tests, follow these steps:
+
+    a. Run tests with coverage: `pytest --cov=src --cov-report=html`
+        This command will run your tests and generate both a terminal report and an HTML coverage report. The HTML coverage report will be located in the htmlcov directory.
+    b. View HTML Coverage Report
+        Open the generated HTML report in a web browser to view the coverage details: `open htmlcov/index.html`
+    c. Test Reports:
+        You can also generate HTML test reports using pytest-html: `pytest --html=report.html`
+        This command will generate an HTML report named report.html in your current directory. Open the HTML report in a web browser to view the detailed test results.
+
+    Explanation:
+        Integration Test: The test_integration_upload_and_download function tests the interaction between the upload_file and download_file methods of the DropboxSync class. It simulates uploading a test file, then downloading it and checks if the methods were called appropriately.
+
+        End-to-End Test: The test_end_to_end_integration function runs the main.py script as a subprocess, which simulates the end-to-end behavior of your program. It checks if the downloaded file exists after running the script.
+
+        By including integration and end-to-end tests, you ensure that your program's components work together as expected and that the entire workflow is functioning correctly. The coverage report helps you identify which parts of your codebase are being tested and which might need more testing. Test reports provide clear visibility into the test results and coverage, making it easier to track and address any issues in your code.
+
 
 ## Assumptions
 
@@ -62,3 +81,4 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Please replace placeholders (`<your_access_token_here>`, `your-username`, etc.) with your actual information. The README.md file provides an overview of your application, how to set it up, use it, and future enhancements that can be made. It's a great way to communicate the purpose and functionality of your project to potential users and contributors.
+
