@@ -23,9 +23,10 @@ Sync Dropbox Folder is a Python application that allows you to synchronize a loc
     `pip install -r requirements.txt` or manually like so: `pip install dropbox python-dotenv pytest pytest-cov pytest-html`
 
 4. Create a `.env` file in the project root and add your Dropbox access token :
-    `touch .env`
+    `cp .env.default .env`
     and add in it:
     DROPBOX_ACCESS_TOKEN=<your_access_token_here>
+    DROPBOX_ACCESS_TOKEN_TEST=<your_testing_access_token_here>
 
 ## Usage
 
