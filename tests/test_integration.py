@@ -1,10 +1,12 @@
 import pytest
 from dropbox_sync import DropboxSync
 
+
 @pytest.fixture
 def dropbox_sync():
     access_token = "test_access_token"
     return DropboxSync(access_token)
+
 
 def test_integration_upload_and_download(dropbox_sync, mocker, tmp_path):
     local_path = tmp_path / "test_file.txt"
