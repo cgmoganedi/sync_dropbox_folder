@@ -17,6 +17,7 @@ Sync Dropbox Folder is a Python application that allows you to synchronize a loc
    `git clone https://github.com/cgmoganedi/sync-dropbox-folder.git && cd sync_dropbox_folder`
 
 2. Set up a virtual environment:
+    Make sure you have Python >= 3.11 installed on the system then create a virtual environment and activate it like so:
     `python -m venv venv && source venv/bin/activate` or `python -m venv venv && ./venv/bin/activate` depending on the terminal used.
 
 3. Install the required packages:
