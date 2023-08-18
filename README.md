@@ -95,3 +95,34 @@ Software Design Patterns and Principles Applied:
     ◉ Unit Testing: Unit tests are written using the Pytest framework to ensure the functionality and robustness of the DropboxSync class methods.
 
 Remember, this is a basic example to showcase the key concepts requested. In a real-world scenario, you would likely implement more comprehensive error handling, logging, and possibly additional design patterns and principles based on the complexity and requirements of the project.
+
+Lastly, on quotes:
+    In Python, both single quotes (') and double quotes (") are used to define string literals. The choice between using single quotes or double quotes is often a matter of personal preference and coding style. However, there are a few scenarios where one might be preferred over the other in this context:
+
+    1. String Quoting: When defining a string literal that contains quotes within it, you can use one type of quote to enclose the string and the other type within the string.This helps improve readability and avoids the need for escaping.
+
+        # Preferred: Using double quotes to enclose string with single quote within it
+        string_with_quote = "He said, 'Hello.'"
+
+        # Alternative: Using single quotes to enclose string with double quote within it
+        string_with_quote = 'He said, "Hello."'
+    
+    2. Consistency: It's important to maintain consistency within your codebase. If your project or team follows a particular style guide that specifies the use of single quotes or double quotes for string literals, then it's best to stick with that convention for uniformity.
+
+    3. Escape Characters: If your string contains escape sequences like \n (newline) or \t (tab), it might be more readable to use single quotes to enclose the string to avoid excessive backslashes.
+        # Preferred: Using single quotes to avoid excessive escaping
+        multi_line_string = 'First line\nSecond line'
+
+        # Alternative: Using double quotes with escaped characters
+        multi_line_string = "First line\\nSecond line"
+    4. String Interpolation: If you need to perform string interpolation (substituting values into strings), f-strings (formatted string literals) are commonly used. F-strings require double quotes.
+        name = "Alice"
+        # Preferred: Using f-string with double quotes
+        greeting = f"Hello, {name}!"
+
+        # Alternative: Using .format() or concatenation with single quotes
+        greeting = 'Hello, {}!'.format(name)
+
+    In the context of this project, either single quotes or double quotes can be used interchangeably, as long as we maintain consistency and choose the option that enhances readability. It's a good practice to follow the conventions of your project or team and consider the specific requirements of each string when deciding which type of quote to use.
+
+
