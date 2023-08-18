@@ -96,6 +96,8 @@ Software Design Patterns and Principles Applied:
 
 Remember, this is a basic example to showcase the key concepts requested. In a real-world scenario, you would likely implement more comprehensive error handling, logging, and possibly additional design patterns and principles based on the complexity and requirements of the project.
 
+It is a common practice to include empty `__init__.py` files in package directories even if they are not currently needed. It prepares the structure for future additions of modules, submodules, or initialization code. And they can contain initialization code for the package. However, they are not strictly necessary in all cases, and their content may vary based on the purpose and structure of your project. In simple terms, while `__init__.py` files are not always required, they are a common way to organize and structure your code into packages and modules, and they provide useful functionality for imports and initialization. Including empty `__init__.py` files is a recommended practice in package directories, especially if you plan to expand the package in the future.
+
 Lastly, on quotes:
     In Python, both single quotes (') and double quotes (") are used to define string literals. The choice between using single quotes or double quotes is often a matter of personal preference and coding style. However, there are a few scenarios where one might be preferred over the other in this context:
 
