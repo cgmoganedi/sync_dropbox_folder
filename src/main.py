@@ -4,20 +4,24 @@ from dropbox_sync import DropboxSync
 
 def main():
     access_token = os.getenv("DROPBOX_ACCESS_TOKEN")
-    local_directory_path = os.getenv("LOCAL_DIRECTORY")
-    remote_directory_path = os.getenv("REMOTE_DIRECTORY")
-
     if not access_token:
         raise ValueError("Dropbox access token not provided in .env file")
 
-    elif not local_directory_path or not remote_directory_path:
-        raise ValueError(
-            "Directory paths have been not provided well in .env file")
-
     dropbox_sync = DropboxSync(access_token)
-    success = dropbox_sync.sync_directories(
-        local_directory_path, remote_directory_path)
-    print(success)
+
+    upload = input('\nWould you like to upload a file? (yes/no) :')
+    if upload == 'yes':
+        file_name = input(
+            '\nWhat is the name (with extention) of the file in the current working director? :')
+        completion = dropbox_sync.upload_file(file_name, file_name)
+        print(completion)
+
+    download = input('\nWould you like to download a file? (yes/no) :')
+    if download == 'yes':
+        file_name = input(
+            '\nWhat is the name (with extention) of the remote file? :')
+        completion = dropbox_sync.download_file(file_name, file_name)
+        print(completion)
 
 
 if __name__ == "__main__":
