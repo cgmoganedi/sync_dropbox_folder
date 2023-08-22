@@ -4,7 +4,7 @@ from dropbox_sync import DropboxSync
 
 @pytest.fixture
 def dropbox_sync():
-    access_token = "test_access_token"
+    access_token = os.getenv("DROPBOX_ACCESS_TOKEN_TEST")
     return DropboxSync(access_token)
 
 
