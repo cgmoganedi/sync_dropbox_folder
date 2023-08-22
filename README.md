@@ -58,8 +58,9 @@ Sync Dropbox Folder is a Python application that allows you to synchronize a loc
 
 ## Assumptions
 
-◉ This application assumes that you have a valid Dropbox access token obtained from the Dropbox App Console.
+◉ This application assumes that you have a valid Dropbox access token obtained from the Dropbox App Console. Scoped App (App Folder) type with relevent access rights.
 ◉ The application currently supports uploading and downloading single files to and from Dropbox.
+◉ The application currently supports uploading and downloading of files to the current app directory to the Scoped App directory.
 
 ## Future Features
 
