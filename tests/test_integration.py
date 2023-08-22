@@ -1,3 +1,4 @@
+import os
 import pytest
 from dropbox_sync import DropboxSync
 
