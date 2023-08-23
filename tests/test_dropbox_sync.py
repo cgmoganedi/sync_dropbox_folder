@@ -1,6 +1,6 @@
 import os
 import pytest
-from dropbox_sync import DropboxSync
+from src.dropbox_sync import DropboxSync
 
 
 @pytest.fixture

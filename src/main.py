@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from dropbox_sync import DropboxSync
+from src.dropbox_sync import DropboxSync
 
 WELCOME = '\n📦 Welcome to Dropbox Scoped App file downloader/uploader! 🚀\n'
 
