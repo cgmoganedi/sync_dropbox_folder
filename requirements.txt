@@ -1,5 +1,6 @@
 dropbox
 python-dotenv
 pytest
+coverage
 pytest-cov
 pytest-html
