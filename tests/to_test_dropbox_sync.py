@@ -11,11 +11,11 @@ def dropbox_sync():
 
 def test_upload_file(dropbox_sync, mocker):
     mock_files_upload = mocker.patch.object(dropbox_sync.dbx.files, 'upload')
-    dropbox_sync.upload_file("local_path", "remote_path")
+    dropbox_sync.upload_file("assets/test_file_11.txt")
     mock_files_upload.assert_called_once()
 
 
 def test_download_file(dropbox_sync, mocker):
     mock_files_download = mocker.patch.object(dropbox_sync.dbx.files, 'download')
-    dropbox_sync.download_file("remote_path", "local_path")
+    dropbox_sync.download_file("assets/test_file_1.txt")
     mock_files_download.assert_called_once()

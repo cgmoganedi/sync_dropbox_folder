@@ -17,9 +17,9 @@ import pytest
 
 
 @pytest.mark.parametrize("inputs", [
-    ['yes', 'assets/test_file_11.txt', 'no'],      # Scenario A
+    ['yes', 'assets/test_file_1.txt', 'no'],      # Scenario A
     ['invalid', 'no'],                # Scenario B
-    ['no', 'yes', 'level-3.png']  # Scenario C
+    ['no', 'yes', 'level-1.png']  # Scenario C
 ])
 def test_main_function(inputs, monkeypatch):
     monkeypatch.setattr("builtins.input", lambda _: inputs.pop(0))

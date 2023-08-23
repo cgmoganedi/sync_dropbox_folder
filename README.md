@@ -21,7 +21,7 @@ Sync Dropbox Folder is a Python application that allows you to synchronize a loc
     `python -m venv venv && source venv/bin/activate` or `python -m venv venv && ./venv/bin/activate` depending on the terminal used.
 
 3. Install the required packages:
-    `pip install -r requirements.txt` or manually like so: `pip install dropbox python-dotenv pytest pytest-cov pytest-html`
+    `pip install -r requirements.txt` or manually like so: `pip install dropbox python-dotenv pytest coverage pytest-cov pytest-html`
 
 4. Create a `.env` file in the project root and add your Dropbox access token:
     `cp .env.example .env`
@@ -31,20 +31,20 @@ Sync Dropbox Folder is a Python application that allows you to synchronize a loc
 
 ## Usage
 
-1. Modify the `local_file_path` and `remote_file_path` variables in `src/main.py` to specify the paths for your local and remote files in Dropbox.
+1. Have some files anywhere in the project, prefarably a in folder called `./assets/` to put your uploads. Also some files in the remote Dropbox Scoped App Folder are recommended.
 
 2. Run the application:
     `python src/main.py`
-    The application will upload the specified local file to Dropbox and then download it as "downloaded_file.txt".
+    The application will offer you intuitive prompts, follow them based one what you desire.
 
 3. Test Reports and Coverage:
     To generate test reports and coverage for your tests, follow these steps:
 
-    a. Run tests with coverage: `pytest --cov=src --cov-report=html`
+    a. Run tests with coverage: `pytest --cov=src --cov-report=html --junitxml junit.xml`
         This command will run your tests and generate both a terminal report and an HTML coverage report. The HTML coverage report will be located in the htmlcov directory.
     b. View HTML Coverage Report
-        Open the generated HTML report in a web browser to view the coverage details: `open htmlcov/index.html`
-    c. Test Reports:
+        Open the generated HTML report in a web browser to view the coverage details: open `htmlcov/index.html`
+    c. Test Reports (due to time constraints, this may not be peferct):
         You can also generate HTML test reports using pytest-html: `pytest --html=report.html`
         This command will generate an HTML report named report.html in your current directory. Open the HTML report in a web browser to view the detailed test results.
 
@@ -62,7 +62,7 @@ Sync Dropbox Folder is a Python application that allows you to synchronize a loc
 ◉ The application currently supports uploading and downloading single files to and from Dropbox.
 ◉ The application currently supports uploading and downloading of files to the current app directory to the Scoped App directory.
 ◉ The relative path of the file is kept the same, remote to local (and vice versa).
-◉ The application was tested with small image files, it could probably work with other file types or larger sizes though that is not neccessarily in this scope.
+◉ The application was tested with small images and text files, it could probably work with other file types or larger sizes though that is not neccessarily in this scope.
 
 ## Future Features
 
@@ -85,7 +85,7 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Please replace placeholders (`<your_access_token_here>`, `your-username`, etc.) with your actual information. The README.md file provides an overview of your application, how to set it up, use it, and future enhancements that can be made. It's a great way to communicate the purpose and functionality of your project to potential users and contributors.
+Please replace placeholders (`<your_access_token_here>`, etc.) with your actual information. The README.md file provides an overview of your application, how to set it up, use it, and future enhancements that can be made. It's a great way to communicate the purpose and functionality of your project to potential users and contributors.
 
 ## Additional explanation (Optional)
 
