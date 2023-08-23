@@ -1,8 +1,4 @@
-import os
 import dropbox
-from dotenv import load_dotenv
-
-load_dotenv()
 
 
 class DropboxSync:
@@ -10,7 +6,7 @@ class DropboxSync:
         self.access_token = access_token
         self.dbx = dropbox.Dropbox(access_token)
 
-    def upload_file(self, local_path, remote_path)-> str:
+    def upload_file(self, local_path, remote_path) -> str:
         """Upload a local file to Dropbox."""
         try:
             with open(local_path, 'rb') as f:
@@ -20,7 +16,7 @@ class DropboxSync:
             print(f"Error uploading file: {e}")
             return '\nUpload Failed!'
 
-    def download_file(self, remote_path, local_path)-> str:
+    def download_file(self, remote_path, local_path) -> str:
         """Download a file from Dropbox."""
         try:
             metadata, response = self.dbx.files_download(remote_path)
@@ -30,4 +26,3 @@ class DropboxSync:
         except Exception as e:
             print(f"Exception while downloading file: {e}")
             return '\nDownload Failed!'
-
