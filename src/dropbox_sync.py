@@ -1,3 +1,4 @@
+import os
 import dropbox
 
 
@@ -19,11 +20,20 @@ class DropboxSync:
     def download_file(self, remote_path) -> str:
         """Download a file from Dropbox."""
         try:
-            metadata, response = self.dbx.files_download(remote_path)
+            metadata, response = self.dbx.files_download('/' + remote_path)
             local_path = remote_path
+            self.create_directories(local_path)
             with open(local_path, 'wb') as f:
                 f.write(response.content)
             return '\nDownload from Dropbox Success!'
         except Exception as e:
             print("Error downloading from Dropbox:", e)
             return '\nDownload Failed!'
+
+    def create_directories(self, path):
+        # Get the directory path without the filename
+        dir_path = os.path.dirname(path)
+
+        # Create directories recursively if they don't exist
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)

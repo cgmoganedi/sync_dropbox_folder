@@ -28,7 +28,7 @@ def main():
     download = input(
         '\nWould you now like to download a file 📄 ? (yes/no) : ').lower()
     if download == 'yes' or download == 'y':
-        file_relative_path = '/' + input(
+        file_relative_path = input(
             '\nWhat is the relative path (with extention) of the remote file in the scoped app? : /')
 
         completion = dropbox_sync.download_file(file_relative_path)
