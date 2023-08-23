@@ -15,10 +15,10 @@ class DropboxSync:
         try:
             with open(local_path, 'rb') as f:
                 self.dbx.files_upload(f.read(), remote_path)
-            return 'Success'
+            return '\nUpload Success!'
         except Exception as e:
             print(f"Error uploading file: {e}")
-            return 'Failed'
+            return '\nUpload Failed!'
 
     def download_file(self, remote_path, local_path)-> str:
         """Download a file from Dropbox."""
@@ -26,8 +26,8 @@ class DropboxSync:
             metadata, response = self.dbx.files_download(remote_path)
             with open(local_path, 'wb') as f:
                 f.write(response.content)
-            return 'Success'
+            return '\nDownload Success!'
         except Exception as e:
             print(f"Exception while downloading file: {e}")
-            return 'Failed'
+            return '\nDownload Failed!'
 
